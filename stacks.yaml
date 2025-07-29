@@ -1,0 +1,14 @@
+dmm:
+  repo: network
+  branch: main
+  compose_file: base/dmm.yaml
+
+keepalived:
+  repo: network
+  branch: main
+  compose_file: base/keepalived.yaml
+
+whoami:
+  repo: network
+  branch: main
+  compose_file: whoami/compose.yaml

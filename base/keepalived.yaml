@@ -1,0 +1,19 @@
+services:
+  keepalived:
+    image: shawly/keepalived
+    environment:
+      TZ: Europe/Berlin
+      KEEPALIVED_VIRTUAL_IP: 192.168.1.11
+      KEEPALIVED_VIRTUAL_MASK: 24
+      # KEEPALIVED_CHECK_IP: any
+      # KEEPALIVED_CHECK_PORT: 9922
+      KEEPALIVED_VRID: 150
+      KEEPALIVED_INTERFACE: enp6s18
+    network_mode: host
+    deploy:
+      mode: global
+      restart_policy:
+        condition: on-failure
+    cap_add:
+      - NET_ADMIN
+      - NET_BROADCAST

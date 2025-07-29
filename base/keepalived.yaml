@@ -6,14 +6,12 @@ services:
     entrypoint: docker
     command: |
       run
-      --rm
-      -i
+      -d
       --name keepalived
       --cap-add=NET_ADMIN
       --cap-add=NET_BROADCAST
       --net host
       -e KEEPALIVED_VIRTUAL_IP=192.168.1.11
-      # -e KEEPALIVED_CHECK_PORT=22
       -e KEEPALIVED_VIRTUAL_MASK=24
       -e KEEPALIVED_VRID=99
       shawly/keepalived

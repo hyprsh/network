@@ -1,19 +1,19 @@
 services:
   keepalived:
-    image: shawly/keepalived
-    environment:
-      TZ: Europe/Berlin
-      KEEPALIVED_VIRTUAL_IP: 192.168.1.11
-      KEEPALIVED_VIRTUAL_MASK: 24
-      # KEEPALIVED_CHECK_IP: any
-      # KEEPALIVED_CHECK_PORT: 9922
-      KEEPALIVED_VRID: 150
-      KEEPALIVED_INTERFACE: eth0
-    network_mode: host
+    image: alpinelinux/docker-cli
     deploy:
-      mode: global
-      restart_policy:
-        condition: on-failure
-    cap_add:
-      - NET_ADMIN
-      - NET_BROADCAST
+        mode: global
+    entrypoint: docker
+    command: |
+      run
+      --rm
+      -i
+      --name keepalived
+      --cap-add=NET_ADMIN
+      --cap-add=NET_BROADCAST
+      --net host
+      -e KEEPALIVED_VIRTUAL_IP=192.168.1.11
+      # -e KEEPALIVED_CHECK_PORT=22
+      -e KEEPALIVED_VIRTUAL_MASK=24
+      -e KEEPALIVED_VRID=99
+      shawly/keepalived

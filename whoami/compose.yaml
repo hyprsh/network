@@ -3,5 +3,3 @@ services:
     image: traefik/whoami:latest
     ports:
       - "1337:80"
-    volumes:
-      - /dev/dri:/dev/dri

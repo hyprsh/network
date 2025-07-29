@@ -1,5 +1,5 @@
 services:
-  swarm-cd:
+  swarmcd:
     image: ghcr.io/m-adawi/swarm-cd:latest
     deploy:
       placement:

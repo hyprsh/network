@@ -1,0 +1,22 @@
+services:
+  keepalived:
+    image: alpinelinux/docker-cli
+    deploy:
+      mode: global
+    entrypoint: docker
+    command: |
+      run
+      --rm
+      -i
+      --name keepalived
+      --cap-add=NET_ADMIN
+      --cap-add=NET_BROADCAST
+      --net host
+      -e KEEPALIVED_VIRTUAL_IP=192.168.1.10
+      -e KEEPALIVED_VIRTUAL_MASK=24
+      -e KEEPALIVED_INTERFACE=eth0
+      -e KEEPALIVED_VRID=99
+      -v /var/run/docker.sock:/var/run/docker.sock
+      shawly/keepalived
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock

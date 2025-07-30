@@ -1,3 +1,3 @@
 # Network
 
-docker stack deploy --compose-file compose.yaml swarmcd
+docker stack deploy --compose-file stacks/base/swarmcd.yaml swarmcd

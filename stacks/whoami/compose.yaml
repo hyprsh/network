@@ -1,5 +1,7 @@
 services:
   whoami:
+    deploy:
+      mode: global
     image: traefik/whoami:latest
     ports:
       - "80:80"

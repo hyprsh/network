@@ -1,0 +1,8 @@
+update_interval: 60
+repos_path: repos/
+sops_secrets_discovery: true
+auto_rotate: true
+address: 0.0.0.0:8080
+repos:
+  network:
+    url: "https://github.com/hyprsh/network.git"

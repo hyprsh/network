@@ -1,12 +1,12 @@
-dmm:
-  repo: network
-  branch: main
-  compose_file: stacks/base/device-manager.yaml
+# dmm:
+#   repo: network
+#   branch: main
+#   compose_file: stacks/base/device-manager.yaml
 
-keepalived:
-  repo: network
-  branch: main
-  compose_file: stacks/base/keepalived.yaml
+# keepalived:
+#   repo: network
+#   branch: main
+#   compose_file: stacks/base/keepalived.yaml
 
 whoami:
   repo: network
